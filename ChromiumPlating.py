@@ -8,7 +8,7 @@ from selenium.webdriver.chrome.options import Options
 from bs4 import BeautifulSoup
 
 ## Search Settings
-isCraftingMat = True   # Set to True if item is a crafting mat
+isCraftingMat = False
 showOnlyTrait = False    # Set to False to allow all traits to appear
 searchTrait = "Decisive"    # Weapon Traits: "Charged" "Defending" "Infused" "Nirnhoned" "Powered" "Precise" "Sharpened" "Training" "Decisive"
                             # Armor Traits: "Divines" "Invigorating" "Impenetrable" "Infused" "Nirnhoned" "Reinforced" "Sturdy" "Training" "Well-Fitted" 
@@ -47,12 +47,8 @@ while True:
                     itemType = "Fine"
                 else:
                     itemType = "Normal"
-                
-                if isCraftingMat:
-                    itemTrait = "Crafting Mat"
-                else:
-                    itemTrait = TDItem.find('img').get('data-trait')
-                
+
+                itemTrait = TDItem.find('img').get('data-trait')
                 NameLevel = re.split(r"\s{2,}", TDItem.get_text().replace("\n", "").strip())
                 itemName = NameLevel[0]
                 itemLevel = NameLevel[2]
