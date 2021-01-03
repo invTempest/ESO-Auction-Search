@@ -13,13 +13,13 @@ showOnlyTrait = False    # Set to False to allow all traits to appear
 searchTrait = "Decisive"    # Weapon Traits: "Charged" "Defending" "Infused" "Nirnhoned" "Powered" "Precise" "Sharpened" "Training" "Decisive"
                             # Armor Traits: "Divines" "Invigorating" "Impenetrable" "Infused" "Nirnhoned" "Reinforced" "Sturdy" "Training" "Well-Fitted" 
                             # Jewelry Traits: "Arcane" "Bloodthirsty" "Harmony" "Healthy" "Infused" "Protective" "Robust" "Swift" "Triune"
-maxAmountLegend = 130000  #130000
+maxAmountLegend = 7000  #130000
 maxAmountEpic = 75000   #75000
 maxAmountSuperior = 65000   #65000
 maxAmountFine = 65000   #65000
 maxAmountNormal = 65000 #65000
 maxLastSeen = 30
-searchURL = 'https://us.tamrieltradecentre.com/pc/Trade/SearchResult?ItemID=18124&SortBy=LastSeen&Order=desc'
+searchURL = 'https://us.tamrieltradecentre.com/pc/Trade/SearchResult?ItemID=211&SortBy=Price&Order=asc'
 ##
 
 while True:

@@ -8,16 +8,16 @@ from selenium.webdriver.chrome.options import Options
 from bs4 import BeautifulSoup
 
 ## Search Settings
-isCraftingMat = False
+isCraftingMat = True   # Set to True if item is a crafting mat
 showOnlyTrait = False    # Set to False to allow all traits to appear
 searchTrait = "Decisive"    # Weapon Traits: "Charged" "Defending" "Infused" "Nirnhoned" "Powered" "Precise" "Sharpened" "Training" "Decisive"
                             # Armor Traits: "Divines" "Invigorating" "Impenetrable" "Infused" "Nirnhoned" "Reinforced" "Sturdy" "Training" "Well-Fitted" 
                             # Jewelry Traits: "Arcane" "Bloodthirsty" "Harmony" "Healthy" "Infused" "Protective" "Robust" "Swift" "Triune"
-maxAmountLegend = 1130000  #130000
-maxAmountEpic = 175000   #75000
-maxAmountSuperior = 165000   #65000
-maxAmountFine = 165000   #65000
-maxAmountNormal = 165000 #65000
+maxAmountLegend = 75000  #130000
+maxAmountEpic = 75000   #75000
+maxAmountSuperior = 65000   #65000
+maxAmountFine = 65000   #65000
+maxAmountNormal = 65000 #65000
 maxLastSeen = 30
 searchURL = 'https://us.tamrieltradecentre.com/pc/Trade/SearchResult?ItemID=18124&SortBy=LastSeen&Order=desc'
 ##
@@ -47,8 +47,12 @@ while True:
                     itemType = "Fine"
                 else:
                     itemType = "Normal"
-
-                itemTrait = TDItem.find('img').get('data-trait')
+                
+                if isCraftingMat:
+                    itemTrait = "Crafting Mat"
+                else:
+                    itemTrait = TDItem.find('img').get('data-trait')
+                
                 NameLevel = re.split(r"\s{2,}", TDItem.get_text().replace("\n", "").strip())
                 itemName = NameLevel[0]
                 itemLevel = NameLevel[2]
