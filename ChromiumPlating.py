@@ -74,26 +74,26 @@ while True:
         output = str(TRcount) + " " + itemType + ", " + itemTrait + ", " + itemName + ", " + itemLevel + ", " + itemLocation[0] + " " + itemLocation[1] + ", " + itemPrice[0] + ", " + itemPrice[2] + ", " + itemPrice[4] + ", " + itemSeen + " Mins ago"
         
         if showOnlyTrait:
-            if itemType == "Legendary" and int(itemPrice[0].replace(',', "")) <= maxAmountLegend and int(itemSeen) <= maxLastSeen and searchTrait == itemTrait:
+            if itemType == "Legendary" and int(float(itemPrice[0].replace(',', ""))) <= maxAmountLegend and int(itemSeen) <= maxLastSeen and searchTrait == itemTrait:
                 print_legendary(output)
-            elif itemType == "Epic" and int(itemPrice[0].replace(',', "")) <= maxAmountEpic and int(itemSeen) <= maxLastSeen and searchTrait == itemTrait:
+            elif itemType == "Epic" and int(float(itemPrice[0].replace(',', ""))) <= maxAmountEpic and int(itemSeen) <= maxLastSeen and searchTrait == itemTrait:
                 print_epic(output)
-            elif itemType == "Superior" and int(itemPrice[0].replace(',', "")) <= maxAmountSuperior and int(itemSeen) <= maxLastSeen and searchTrait == itemTrait:
+            elif itemType == "Superior" and int(float(itemPrice[0].replace(',', ""))) <= maxAmountSuperior and int(itemSeen) <= maxLastSeen and searchTrait == itemTrait:
                 print_superior(output)
-            elif itemType == "Fine" and int(itemPrice[0].replace(',', "")) <= maxAmountFine and int(itemSeen) <= maxLastSeen and searchTrait == itemTrait:
+            elif itemType == "Fine" and int(float(itemPrice[0].replace(',', ""))) <= maxAmountFine and int(itemSeen) <= maxLastSeen and searchTrait == itemTrait:
                 print_fine(output)
-            elif itemType == "Normal" and int(itemPrice[0].replace(',', "")) <= maxAmountNormal and int(itemSeen) <= maxLastSeen and searchTrait == itemTrait:
+            elif itemType == "Normal" and int(float(itemPrice[0].replace(',', ""))) <= maxAmountNormal and int(itemSeen) <= maxLastSeen and searchTrait == itemTrait:
                 print_normal(output)
         else:
-            if itemType == "Legendary" and int(itemPrice[0].replace(',', "")) <= maxAmountLegend and int(itemSeen) <= maxLastSeen:
+            if itemType == "Legendary" and int(float(itemPrice[0].replace(',', ""))) <= maxAmountLegend and int(itemSeen) <= maxLastSeen:
                 print_legendary(output)
-            elif itemType == "Epic" and int(itemPrice[0].replace(',', "")) <= maxAmountEpic and int(itemSeen) <= maxLastSeen:
+            elif itemType == "Epic" and int(float(itemPrice[0].replace(',', ""))) <= maxAmountEpic and int(itemSeen) <= maxLastSeen:
                 print_epic(output)
-            elif itemType == "Superior" and int(itemPrice[0].replace(',', "")) <= maxAmountSuperior and int(itemSeen) <= maxLastSeen:
+            elif itemType == "Superior" and int(float(itemPrice[0].replace(',', ""))) <= maxAmountSuperior and int(itemSeen) <= maxLastSeen:
                 print_superior(output)
-            elif itemType == "Fine" and int(itemPrice[0].replace(',', "")) <= maxAmountFine and int(itemSeen) <= maxLastSeen:
+            elif itemType == "Fine" and int(float(itemPrice[0].replace(',', ""))) <= maxAmountFine and int(itemSeen) <= maxLastSeen:
                 print_fine(output)
-            elif itemType == "Normal" and int(itemPrice[0].replace(',', "")) <= maxAmountNormal and int(itemSeen) <= maxLastSeen:
+            elif itemType == "Normal" and int(float(itemPrice[0].replace(',', ""))) <= maxAmountNormal and int(itemSeen) <= maxLastSeen:
                 print_normal(output)
     sleep(5)
     driver.quit()
